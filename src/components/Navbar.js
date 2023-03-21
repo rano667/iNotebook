@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   let location = useLocation();
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Navbar
@@ -37,6 +34,20 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+        {!localStorage.getItem("token") ? (
+          <div>
+            <Link className="btn btn-primary mx-1" to="/login" role="button">
+              Login
+            </Link>
+            <Link className="btn btn-primary mx-1" to="/signup" role="button">
+              Sign Up
+            </Link>
+          </div>
+        ) : (
+          <Link className="btn btn-primary mx-1" to="/login" role="button" onClick={()=>{localStorage.removeItem("token")}}>
+            Log Out
+          </Link>
+        )}
       </div>
     </nav>
   );

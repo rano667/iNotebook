@@ -20,10 +20,11 @@ router.post(
     body("password", "Minimum 5 characters required").isLength({ min: 5 }),
   ],
   async (req, res) => {
+    let success = false;
     //If there are errors return bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success, errors: errors.array() });
     }
 
     //check whether the user with this email exist already
@@ -49,7 +50,8 @@ router.post(
       // message: err.message})});
       // res.json({user});
       const token = jwt.sign({ id: user.id }, JWT_Secret);
-      res.json({ token });
+      success = true;
+      res.json({ success, token });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");
@@ -66,6 +68,7 @@ router.post(
     body("password", "password cannot be blank").exists(),
   ],
   async (req, res) => {
+    let success = false;
     //If there are errors return bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -77,19 +80,22 @@ router.post(
     try {
       let user = await User.findOne({ email });
       if (!user) {
+        success = false;
         return res
           .status(400)
-          .json({ error: "Please try to login with Correct Credential" });
+          .json({ success, error: "Please try to login with Correct Credential" });
       }
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
+        success = false;
         return res
           .status(400)
-          .json({ error: "Please try to login with Correct Credential" });
+          .json({ success, error: "Please try to login with Correct Credential" });
       }
       //if the password is correct we will send the payload
       const token = jwt.sign({ id: user.id }, JWT_Secret);
-      res.json({ token });
+      success = true;
+      res.json({ success, token });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("internal Server Error");
