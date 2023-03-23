@@ -103,8 +103,8 @@ const SignUp = (props) => {
             minLength={5}
             required
           />
-          {credentials.password !== credentials.cpassword && 
-            <div id="passwordHelp" className="form-text">
+          {credentials.password !== credentials.cpassword && credentials.cpassword &&
+            <div id="passwordHelp" className="form-text" style={{color:"red"}}>
               Confirm Password should match Password
             </div>
           }

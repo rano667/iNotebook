@@ -27,7 +27,6 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          
           <Alert alert={alert} />
           <div className="container">
             <Switch>
