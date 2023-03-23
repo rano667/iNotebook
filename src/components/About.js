@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <p>
-      The Build is done on MERN Stack. This is a CRUD Application. This ststic Page
+      The Build is done on MERN Stack. This is a CRUD Application. This static Page
       requires it Backend Server and DB to run.
       </p>
       Thank You.
