@@ -30,7 +30,6 @@ const SignUp = (props) => {
       }),
     });
     const json = await response.json();
-    console.log(json); // parses JSON response into native JavaScript objects
     if (json.success) {
       //save the authentication token and redirect
       localStorage.setItem("token", json.token);

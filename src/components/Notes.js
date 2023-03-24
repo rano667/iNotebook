@@ -49,7 +49,7 @@ const Notes = (props) => {
       history.push("/login");
     }
     
-  }, []);
+  });
 
   return (
     <>

@@ -21,7 +21,6 @@ const NoteState = (props) => {
       },
     });
     const json = await response.json(); // parses JSON response into native JavaScript objects
-    console.log(json);
     setNotes(json);
   };
 
@@ -87,7 +86,6 @@ const NoteState = (props) => {
 
     // logic to edit in client
     let NewNotes = JSON.parse(JSON.stringify(notes));
-    console.log(notes);
     for (let index = 0; index < NewNotes.length; index++) {
       const element = NewNotes[index];
       if (element._id === id) {
