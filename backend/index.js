@@ -16,6 +16,8 @@ app.use(cors())
 //   res.send('Hello World!')
 // })
 app.use(express.json())
+// /api/auth : The path for which the middleware function is invoked
+// require('./routes/auth') The Middle ware
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'))
 
