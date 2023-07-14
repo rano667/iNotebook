@@ -16,8 +16,7 @@ const NoteState = (props) => {
 
       headers: {
         "Content-Type": "application/json",
-        token:
-          localStorage.getItem('token'),
+        token: localStorage.getItem("token"),
       },
     });
     const json = await response.json(); // parses JSON response into native JavaScript objects
@@ -34,8 +33,7 @@ const NoteState = (props) => {
 
       headers: {
         "Content-Type": "application/json",
-        token:
-          localStorage.getItem('token'),
+        token: localStorage.getItem("token"),
       },
 
       body: JSON.stringify({ title, description, tag }), // body data type must match "Content-Type" header
@@ -54,8 +52,7 @@ const NoteState = (props) => {
 
       headers: {
         "Content-Type": "application/json",
-        token:
-          localStorage.getItem('token')
+        token: localStorage.getItem("token"),
       },
     });
     await response.json(); // parses JSON response into native JavaScript objects
@@ -76,8 +73,7 @@ const NoteState = (props) => {
 
       headers: {
         "Content-Type": "application/json",
-        token:
-          localStorage.getItem('token'),
+        token: localStorage.getItem("token"),
       },
 
       body: JSON.stringify({ title, description, tag }), // body data type must match "Content-Type" header

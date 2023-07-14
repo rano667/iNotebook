@@ -36,6 +36,7 @@ const Login = (props) => {
   };
 
   const onChange = (e) => {
+    // add new credentials 
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
