@@ -12,9 +12,9 @@ app.use(cors())
 
 
 //Available routes
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+app.get('/', (req, res) => {
+  res.send('iNotebook');
+})
 app.use(express.json())
 // /api/auth : The path for which the middleware function is invoked
 // require('./routes/auth') The Middle ware
