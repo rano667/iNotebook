@@ -13,10 +13,7 @@ app.use(cors())
 
 //Available routes
 app.get('/', (req, res) => {
-  res.json({
-    message : "iNotebook",
-    statusCode : 200
-  })
+  res.send("i note book")
 })
 
 connectToMongo();
