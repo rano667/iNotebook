@@ -2,7 +2,7 @@ const connectToMongo = require('./db');
 const express = require('express')
 var cors = require('cors')
 
-connectToMongo();
+
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
     statusCode : 200
   })
 })
+
+connectToMongo();
 
 // /api/auth : The path for which the middleware function is invoked
 // require('./routes/auth') The Middle ware
