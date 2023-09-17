@@ -1,0 +1,189 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "iNotebook",
+    "dateExported": "2023-07-14T09:14:21.977Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "e2d9a966-d355-41d1-8499-b7bc638a1b99",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2023-02-25T04:04:13.369Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "34b89a9c-fe1a-4c73-867d-70d585b80e23",
+            "name": "Notes",
+            "containerId": "",
+            "created": "2023-03-09T04:24:11.930Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ee83e32a-4ec1-4d29-8c70-ac22667e2fd2",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "e2d9a966-d355-41d1-8499-b7bc638a1b99",
+            "name": "Create a New User",
+            "url": "localhost:5000/api/auth/createuser",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-25T04:04:25.120Z",
+            "modified": "2023-06-12T09:32:40.302Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"rachin\",\n  \"email\":\"rachin667@gmail.com\",\n  \"password\":\"rachin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "292df475-faff-462a-9afe-048b29edd6e0",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "e2d9a966-d355-41d1-8499-b7bc638a1b99",
+            "name": "User Login Using Creds",
+            "url": "localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-03-09T04:05:23.033Z",
+            "modified": "2023-03-14T09:44:47.383Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"ranjanm667@gmail.com\",\n  \"password\":\"ranjan\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "441381e7-90b8-400b-b1b5-3d47d6ab20fc",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "e2d9a966-d355-41d1-8499-b7bc638a1b99",
+            "name": "Get User Data",
+            "url": "localhost:5000/api/auth/getuser",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-09T04:16:17.576Z",
+            "modified": "2023-03-09T04:21:20.909Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk4OWUwMWI5Njc1MzhjMDZmMTFmMCIsImlhdCI6MTY3ODMzNTAzN30.quJQofwQyqqZn7YpKMY8spW7KkF9kIEwub-sdYrCtUs"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "39f3c6c0-01f5-4209-ab4b-f5ee233d5714",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "34b89a9c-fe1a-4c73-867d-70d585b80e23",
+            "name": "Fetch All Notes",
+            "url": "localhost:5000/api/notes/fetchallnotes",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-03-09T04:29:50.909Z",
+            "modified": "2023-03-09T05:34:55.585Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk4OWUwMWI5Njc1MzhjMDZmMTFmMCIsImlhdCI6MTY3ODM0MDA4MH0.piYZw65XUsfOSrvyUfivS1gEyOD7bmid7jel6BnJ0Ig"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "904772f3-1d3d-4b00-986d-9d78828aa7ed",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "34b89a9c-fe1a-4c73-867d-70d585b80e23",
+            "name": "Add Note",
+            "url": "localhost:5000/api/notes/addnote",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-03-09T04:44:06.990Z",
+            "modified": "2023-03-13T07:40:14.155Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk4OWUwMWI5Njc1MzhjMDZmMTFmMCIsImlhdCI6MTY3ODMzNzQyMX0.XxTDonXscQ0RfMJLDXjj41KQ9hWkxl4DU4zX3Hu9bH8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"My Title2\",\n  \"description\": \"Please have a healthy Lifestyle\",\n  \"tag\": \"Personal\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6594024e-bbb0-4992-ab41-d82ece43ba5a",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "34b89a9c-fe1a-4c73-867d-70d585b80e23",
+            "name": "Update Note",
+            "url": "localhost:5000/api/notes/updatenote/641197693639eb8d29864e19",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-03-09T05:22:46.042Z",
+            "modified": "2023-03-15T10:10:24.565Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk4OWUwMWI5Njc1MzhjMDZmMTFmMCIsImlhdCI6MTY3ODM0MDA4MH0.piYZw65XUsfOSrvyUfivS1gEyOD7bmid7jel6BnJ0Ig"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"23981000\",\n  \"description\": \"4325833463246\",\n  \"tag\": \"124\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "12026ce6-5052-47de-aeb7-e61c4613b562",
+            "colId": "9dbfbb8d-22bf-424e-8434-e4bc7cb17858",
+            "containerId": "34b89a9c-fe1a-4c73-867d-70d585b80e23",
+            "name": "Delete Note",
+            "url": "localhost:5000/api/notes/deletenote/640966325994113d41dec586",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2023-03-09T05:54:36.206Z",
+            "modified": "2023-03-09T06:07:07.169Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjk4OWUwMWI5Njc1MzhjMDZmMTFmMCIsImlhdCI6MTY3ODM0MDA4MH0.piYZw65XUsfOSrvyUfivS1gEyOD7bmid7jel6BnJ0Ig"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
